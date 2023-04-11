@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Matthew J. C. Crump">
+<meta name="author" content="Danielle J. Navarro">
+<meta name="author" content="Jeffrey Suzuki">
+<meta name="dcterms.date" content="2018-09-01">
+
+<title>Answering questions with data</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="01-Science_Data.html" rel="next">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+<script type="text/javascript">
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-79429674-3', 'auto');
+
+ga('send', {
+  hitType: 'pageview',
+  'anonymizeIp': true,
+});
+</script>
+
+
+<meta property="og:title" content="Answering questions with data">
+<meta property="og:description" content="A free textbook teaching introductory statistics for undergraduates in psychology, including a lab manual, and course website. Licensed on CC BY SA 4.0">
+<meta property="og:site-name" content="Answering questions with data">
+<meta name="twitter:title" content="Answering questions with data">
+<meta name="twitter:description" content="A free textbook teaching introductory statistics for undergraduates in psychology, including a lab manual, and course website. Licensed on CC BY SA 4.0">
+<meta name="twitter:image" content="https://crumplab.com/statistics/imgs/TextbookCover.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image-height" content="1310">
+<meta name="twitter:image-width" content="916">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Answering questions with data</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../docs">Answering questions with data</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/CrumpLab/statistics/" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="index.html" class="sidebar-item-text sidebar-link active">Preface</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="01-Science_Data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Why Statistics?</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="02-Describing_Data.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Describing Data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="03-Correlation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Correlation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="04-SamplesPopulations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Probability, Sampling, and Estimation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="05-Foundation_Inference.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Foundations for inference</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="06-ttests.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">t-tests</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="07-ANOVA.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">ANOVA</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="08-RMANOVA.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Repeated Measures ANOVA</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="09-FactorialANOVA.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Factorial ANOVA</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="10-MixedANOVA.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">More On Factorial Designs</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="11-Simulation.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Simulating Data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="12-Thinking.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Thinking about answering questions with data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="13-Gifs.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">GIFs</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a>
+  <ul class="collapse">
+  <li><a href="#important-notes" id="toc-important-notes" class="nav-link" data-scroll-target="#important-notes">Important notes</a>
+  <ul class="collapse">
+  <li><a href="#textbook" id="toc-textbook" class="nav-link" data-scroll-target="#textbook">Textbook</a></li>
+  <li><a href="#lab-manual" id="toc-lab-manual" class="nav-link" data-scroll-target="#lab-manual">Lab Manual</a></li>
+  <li><a href="#course-website" id="toc-course-website" class="nav-link" data-scroll-target="#course-website">Course website</a></li>
+  <li><a href="#contributors" id="toc-contributors" class="nav-link" data-scroll-target="#contributors">Contributors</a></li>
+  <li><a href="#attributions" id="toc-attributions" class="nav-link" data-scroll-target="#attributions">Attributions</a></li>
+  <li><a href="#cc-by-sa-4.0-license" id="toc-cc-by-sa-4.0-license" class="nav-link" data-scroll-target="#cc-by-sa-4.0-license">CC BY-SA 4.0 license</a></li>
+  </ul></li>
+  <li><a href="#copying-the-textbook" id="toc-copying-the-textbook" class="nav-link" data-scroll-target="#copying-the-textbook">Copying the textbook</a>
+  <ul class="collapse">
+  <li><a href="#acknowledgments" id="toc-acknowledgments" class="nav-link" data-scroll-target="#acknowledgments">Acknowledgments</a></li>
+  <li><a href="#why-we-did-this" id="toc-why-we-did-this" class="nav-link" data-scroll-target="#why-we-did-this">Why we did this</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/CrumpLab/statistics/edit/master/index.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Answering questions with data</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Authors</div>
+    <div class="quarto-title-meta-contents">
+             <p>Matthew J. C. Crump </p>
+             <p>Danielle J. Navarro </p>
+             <p>Jeffrey Suzuki </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 1, 2018</p>
+    </div>
+  </div>
+    
+  </div>
+  
+<div>
+  <div class="abstract">
+    <div class="abstract-title">Abstract</div>
+    A free textbook teaching introductory statistics for undergraduates in psychology, including a lab manual, and course website. Licensed on CC BY SA 4.0
+  </div>
+</div>
+
+</header>
+
+
+<section id="preface" class="level1 unnumbered">
+<p><img src="imgs/TextbookCover.png" title="Answering questions with data" class="quarto-cover-image img-fluid"></p><h1 class="unnumbered">Preface</h1>
+<p>First Draft (version 0.9 = August 7th, 2018) Last Compiled: 2022-08-05</p>
+<p><strong>Online Textbook</strong>: <a href="https://crumplab.github.io/statistics/" class="uri">https://crumplab.github.io/statistics/</a></p>
+<p><strong>Citation</strong>: Crump, M. J. C., Navarro, D. J., &amp; Suzuki, J. (2019, June 5). Answering Questions with Data (Textbook): Introductory Statistics for Psychology Students. https://doi.org/10.17605/OSF.IO/JZE52</p>
+<section id="important-notes" class="level2">
+<h2 class="anchored" data-anchor-id="important-notes">Important notes</h2>
+<p>This is a free textbook teaching introductory statistics for undergraduates in Psychology. This textbook is part of a larger OER course package for teaching undergraduate statistics in Psychology, including this textbook, a lab manual, and a course website. All of the materials are free and copiable, with source code maintained in Github repositories. The links below connect to various components of the project. The main OSF project link is <a href="https://osf.io/3s68c/" class="uri">https://osf.io/3s68c/</a>.</p>
+<section id="textbook" class="level3">
+<h3 class="anchored" data-anchor-id="textbook">Textbook</h3>
+<ul>
+<li>website: <a href="https://crumplab.github.io/statistics/" class="uri">https://crumplab.github.io/statistics/</a></li>
+<li>OSF: <a href="https://osf.io/jze52/" class="uri">https://osf.io/jze52/</a></li>
+<li>Github: <a href="https://github.com/CrumpLab/statistics" class="uri">https://github.com/CrumpLab/statistics</a></li>
+<li>DOI: 10.17605/OSF.IO/JZE52</li>
+</ul>
+</section>
+<section id="lab-manual" class="level3">
+<h3 class="anchored" data-anchor-id="lab-manual">Lab Manual</h3>
+<ul>
+<li>website: <a href="https://crumplab.github.io/statisticsLab/" class="uri">https://crumplab.github.io/statisticsLab/</a></li>
+<li>OSF: <a href="https://osf.io/m2npj/" class="uri">https://osf.io/m2npj/</a></li>
+<li>Github: <a href="https://github.com/CrumpLab/statisticsLab" class="uri">https://github.com/CrumpLab/statisticsLab</a></li>
+<li>DOI: 10.17605/OSF.IO/M2NPJ</li>
+</ul>
+</section>
+<section id="course-website" class="level3">
+<h3 class="anchored" data-anchor-id="course-website">Course website</h3>
+<ul>
+<li>website: <a href="https://crumplab.github.io/psyc3400/" class="uri">https://crumplab.github.io/psyc3400/</a></li>
+<li>OSF: <a href="https://osf.io/awxu9/" class="uri">https://osf.io/awxu9/</a></li>
+<li>Github: <a href="https://github.com/CrumpLab/psyc3400" class="uri">https://github.com/CrumpLab/psyc3400</a></li>
+<li>DOI: 10.17605/OSF.IO/AWXU9</li>
+</ul>
+<p>All resources are released under a creative commons licence <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Click the link to read more about the license, or read more below in the license section.</p>
+</section>
+<section id="contributors" class="level3">
+<h3 class="anchored" data-anchor-id="contributors">Contributors</h3>
+<p>Team members contributing new content include, Matthew Crump, Alla Chavarga, Anjali Krishnan, Jeffrey Suzuki, and Stephen Volz. This textbook was primarily written by Matthew J. C. Crump. Jeff contributed the YouTube videos peppered throughout the textbook. All of Jeff’s statistics videos are available on his Youtube channel: <a href="https://www.youtube.com/playlist?list=PLKXdxQAT3tCvuex_E1ZnQYaw897ELUSaI">Statistics Video playlist</a>.</p>
+<p>Alla, Anjali, and Stephen wrote the lab manual exercises for SPSS, JAMOVI, and Excel. Matt Crump wrote the lab manual exercises for R.</p>
+<p>Matt Crump wrote a free and copiable <a href="https://crumplab.github.io/psyc3400/">course website</a>, in R Markdown. The course website also contains slide decks for the lectures.</p>
+</section>
+<section id="attributions" class="level3">
+<h3 class="anchored" data-anchor-id="attributions">Attributions</h3>
+<p>Two of the chapters were adapted from Danielle Navarro’s wonderful (and bigger) free textbook, also licensed under the same creative commons license. The citation for that textbook is: Navarro, D. (2018). Learning statistics with R: A tutorial for psychology students and other beginners (version 0.6). The website is <a href="https://compcogscisydney.org/learning-statistics-with-r/" class="uri">https://compcogscisydney.org/learning-statistics-with-r/</a></p>
+<p>Chapter notes within the book are provided to indicate sections where material from Navarro was included. A short summary is here</p>
+<p><strong>Chapter 1: Why statistics</strong>, Adapted nearly verbatim with some editorial changes from Chapters 1 and 2, Navarro, D.</p>
+<p><strong>Chapter 4: Probability, Sampling, and Estimation</strong>, Adapted and expanded from Chapters 9 and 10, Navarro D.</p>
+</section>
+<section id="cc-by-sa-4.0-license" class="level3">
+<h3 class="anchored" data-anchor-id="cc-by-sa-4.0-license">CC BY-SA 4.0 license</h3>
+<p>This license means that you are free to:</p>
+<ul>
+<li>Share: copy and redistribute the material in any medium or format</li>
+<li>Adapt: remix, transform, and build upon the material for any purpose, even commercially.</li>
+</ul>
+<p>The licensor cannot revoke these freedoms as long as you follow the license terms.</p>
+<p>Under the following terms:</p>
+<ul>
+<li>Attribution: You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.</li>
+<li>ShareAlike: If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.</li>
+<li>No additional restrictions: You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.</li>
+</ul>
+</section>
+</section>
+<section id="copying-the-textbook" class="level2">
+<h2 class="anchored" data-anchor-id="copying-the-textbook">Copying the textbook</h2>
+<p>This textbook was written in R-Studio, using R Markdown, and compiled into a web-book format using the bookdown package. In general, I thank the larger R community for all of the amazing tools they made, and for making those tools open, so that I could use them to make this thing.</p>
+<p>All of the source code for compiling the book is available in the GitHub repository for this book:</p>
+<p><a href="https://github.com/CrumpLab/statistics" class="uri">https://github.com/CrumpLab/statistics</a></p>
+<p>In principle, anybody could fork or otherwise download this repository. Load the Rproj file in R-studio, and then compile the entire book. Then, the individual .rmd files for each chapter could be edited for content and style to better suit your needs.</p>
+<p>If you want to contribute to this version of the textbook, you could make pull requests on GitHub, or discuss issues and request on the issues tab.</p>
+<section id="acknowledgments" class="level3">
+<h3 class="anchored" data-anchor-id="acknowledgments">Acknowledgments</h3>
+<p>Thanks to the librarians at Brooklyn College of CUNY, especially Miriam Deutch, and Emily Fairey, for their support throughout the process. Thanks to CUNY for supporting OER development, and for the grant we received to develop this work. Thanks to Jenn Richler for letting me talk about statistics all summer long.</p>
+</section>
+<section id="why-we-did-this" class="level3">
+<h3 class="anchored" data-anchor-id="why-we-did-this">Why we did this</h3>
+<p>Why write another statistics textbook, aren’t there already loads of those? Yes, there are. We had a couple reasons. First, we would like to make R more accessible for the undergraduate population, and we wrote this textbook around the capabilities of R. The textbook was written entirely in R-Studio, and most of the examples have associated R-code. R is not much of a focus in the textbook, but there is an introduction to using R to solve data-analysis problems in the lab manual. Many instructors still use SPSS, Excel, or newer free GUIs like JAMOVI, so we also made lab exercises for each of those as well.</p>
+<p>This is a mildly opinionated, non-traditional introduction to statistics. It acknowledges some of the major ideas from traditional frequentist approaches, and some Bayesian approaches. Much of the conceptual foundation is rooted in simulations that can be conducted in R. We use some formulas, but mostly explain things without formulas. The textbook was written with math-phobia in mind, and attempts to reduce the phobia associated with arithmetic computations. There are many things missing that should probably be added. We will do our best to add necessary things as we update the textbook.</p>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="01-Science_Data.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Why Statistics?</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
