@@ -12,3 +12,6 @@ westoeradmin / Westoer123!
 
 The Virtual Machine may be downloaded in OVA format at 
 https://1drv.ms/u/s!AoR1yuYJ-VcEsPlHKg0crvDsVve2kw?e=eiM5uf
+
+The General Psychology Canvas IMSCC file can be downloaded at this link (It's larger than GitHub's limit):
+https://1drv.ms/u/s!AoR1yuYJ-VcEsvt37IRAeiqtujd5sQ?e=sweQbS
